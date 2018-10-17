@@ -49,7 +49,8 @@ function treemap(element) {
         return;
     }
 
-    var color = d3.scaleOrdinal(d3.schemeCategory10);
+    var color = d3.scaleOrdinal()
+        .range(["#e74c3c","#85c1e9","#7d3c98","#a04000"]);
 
     var nested_data = d3.nest()
         .key(function (d) {
@@ -154,7 +155,8 @@ function bar_chart(element, property) {
     var y = d3.scaleLinear()
         .rangeRound([height, 0]);
 
-    var z = d3.scaleOrdinal(d3.schemeCategory10);
+    var z = d3.scaleOrdinal()
+        .range(["#e74c3c","#85c1e9","#7d3c98","#a04000"]);
 
     if (property === "time") {
         x.domain([0, d3.max(nested_data.map(function (d) {
