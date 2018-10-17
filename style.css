@@ -12,3 +12,9 @@ main {
     font-size: 10px;
     fill: white;
 }
+
+.axis {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 10px;
+    fill: white;
+}
