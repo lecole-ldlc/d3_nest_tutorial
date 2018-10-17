@@ -40,7 +40,7 @@ function treemap(element) {
 
     $("#treemap_" + element).html("");
     $("#legend_" + element).html("");
-    var svg = d3.select("#treemap_" + element).append("svg").attr("width", 600).attr("height", 300);
+    var svg = d3.select("#treemap_" + element).append("svg").attr("width", 1000).attr("height", 500);
     var width = +svg.attr("width") - margin.left - margin.right;
     var height = +svg.attr("height") - margin.top - margin.bottom;
     var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -122,7 +122,7 @@ function treemap(element) {
 
 function bar_chart(element, property) {
     $("#" + element).html("");
-    var svg = d3.select("#" + element).append("svg").attr("width", 300).attr("height", 300);
+    var svg = d3.select("#" + element).append("svg").attr("width", 400).attr("height", 400);
     var width = +svg.attr("width") - margin.left - margin.right;
     var height = +svg.attr("height") - margin.top - margin.bottom;
     var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
