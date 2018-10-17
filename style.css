@@ -9,6 +9,6 @@ main {
 
 .tm_text {
     font-family: "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 10px;
-    fill: white;
+    font-size: 15px;
+    fill: blue;
 }
