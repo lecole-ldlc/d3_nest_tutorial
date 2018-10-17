@@ -200,11 +200,14 @@ function bar_chart(element, property) {
     g.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(0," + height + ")")
+        .attr("class", "axes")
         .call(d3.axisBottom(x));
 
     g.append("g")
         .attr("class", "axis")
+        .attr("class", "axes")
         .call(d3.axisLeft(y).ticks(null, "s"))
+
 }
 
 $(function () {
@@ -219,6 +222,7 @@ $(function () {
         data.forEach(function (d) {
             d.time = +d.time;
         });
+        bar_chart("bcp", "priority");
         bar_chart("bcs", "status");
         bar_chart("bcw", "who");
         treemap("status");
