@@ -219,6 +219,7 @@ $(function () {
         data.forEach(function (d) {
             d.time = +d.time;
         });
+        bar_chart("bcp", "priority");
         bar_chart("bcs", "status");
         bar_chart("bcw", "who");
         treemap("status");
