@@ -13,12 +13,12 @@ Le projet est à rendre pour le *vendredi 26 octobre 9h30*.
  - [1] commenter (de préférence en anglais) chaque ligne du fichier main.js
  - ~~[2] Afficher un histogramme des priorités (Ajouter une colonne sur la première ligne, ensuite c'est 1 ligne de javascript...)~~
  - [3] Afficher un histogramme du temps des taches. Pour cela modifier la fonction `bar_chart` car l'échelle en X devra etre linéaire !
- - [4] Afficher quelque-part dans la page des statistiques globales:
-   - Temps total de toutes les taches
-   - Temps total des taches de Joe
-   - Temps total des taches en cours
+ - ~~[4] Afficher quelque-part dans la page des statistiques globales:~~
+   - ~~Temps total de toutes les taches~~
+   - ~~Temps total des taches de Joe~~
+   - ~~Temps total des taches en cours~~
  - ~~[5] Changer les couleurs des graphiques à partir d'une liste définie par vos soins~~
- - [6] Changer l'organisation de la page pour que les graphiques soit plus gros (2 barchart par ligne, 1 treemap par ligne)
+ - ~~[6] Changer l'organisation de la page pour que les graphiques soit plus gros (2 barchart par ligne, 1 treemap par ligne)~~
  - [7] Afficher une treemap avec une décomposition par personne (couleur) puis par priorité (Treemap who). Afficher la légende associée.
  - [8] Compléter la barre de navigation en mettant des boutons pour accéder aux différentes lignes
  - ~~[9] Changer avec du CSS le style des axes des graphiques~~
