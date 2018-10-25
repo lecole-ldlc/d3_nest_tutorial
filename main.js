@@ -28,6 +28,7 @@ function legend(element, keys, z) {
             return z(d)
         });
 
+
     legend.append('text')
         .attr('x', legendRectSize + 5)
         .attr('y', 15)
@@ -199,6 +200,24 @@ function bar_chart(element, property) {
         })
         .style("fill", function (d) {
             return z(d.key)
+        })
+    .on("mouseover", function(d){
+        d3.select(".tooltip")
+            .style("display", "block")
+
+        d3.select(this)
+            .transition().duration(100)
+            //.attr("fill", "black")
+            .attr("y", y(d.value.size) - 10)
+    })
+        .on("mouseout", function(d){
+            d3.select(".tooltip")
+                .style("display", "none");
+            //d3.select(this).attr("fill", c(d.fruit));
+            d3.select(this)
+                .transition().duration(100)
+                //.attr("fill", c(d.fruit))
+                .attr("y", y(d.value.size))
         });
 
     g.append("g")
