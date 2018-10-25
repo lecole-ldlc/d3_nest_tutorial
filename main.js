@@ -1,5 +1,5 @@
-var data = undefined;       //we're sure the data is undefinied at the beginning
-var margin = {top: 20, right: 20, bottom: 30, left: 40};        //define the pargin of barchart
+var data = undefined;       //we're sure the data is undefined at the beginning
+var margin = {top: 20, right: 20, bottom: 30, left: 40};        //define the margin of barchart
 
 //function for drawing the legend on graph
 function legend(element, keys, z) {
@@ -41,9 +41,9 @@ function legend(element, keys, z) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //create a TreeMap chart
-function treemap(element, primary, secondary) {     //element is which element of the data we need, primary are the color and secondary the data show up
+function treemap(element, primary, secondary) {     //element is which element of the data we need, primary are the color and secondary the data shown up
 
-    $("#treemap_" + element).html("");  //select the good div in index.html, and empty it
+    $("#treemap_" + element).html("");  //select the good div in index.html, and clean it
     $("#legend_" + element).html("");
     var svg = d3.select("#treemap_" + element).append("svg").attr("width", 1000).attr("height", 500);       //set the svg
     var width = +svg.attr("width") - margin.left - margin.right;        //add the margin
@@ -58,7 +58,7 @@ function treemap(element, primary, secondary) {     //element is which element o
         .range(["#e74c3c","#85c1e9","#7d3c98","#a04000"]);
 
     var nested_data = d3.nest()     //group data (work like "GROUP BY" on SQL)
-        .key(function (d) {     //fist key
+        .key(function (d) {     //first key
             return d[primary];
         })
         .key(function (d) {     //second key
