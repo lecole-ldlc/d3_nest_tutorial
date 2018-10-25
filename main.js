@@ -215,12 +215,109 @@ function bar_chart(element, property) {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function bar_chart_time(element, property) {
+    $("#" + element).html("");
+    var svg = d3.select("#" + element).append("svg").attr("width", 400).attr("height", 400);
+    var width = +svg.attr("width") - margin.left - margin.right;
+    var height = +svg.attr("height") - margin.top - margin.bottom;
+    var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var nested_data = d3.nest()
+        .key(function (d) {
+            return d[property];
+        })
+        .rollup(function (d) {
+            return {
+                size: d.length, total_time: d3.sum(d, function (d) {
+                    return d.time;
+                })
+            };
+        })
+        .entries(data);
+
+    nested_data = nested_data.sort(function (a, b) {
+        return d3.ascending(a.key, b.key)
+    });
+
+
+    console.log("BARCHART DATA");
+    console.log(nested_data);
+
+    var x = d3.scaleLinear()
+        .rangeRound([0, width]);
+
+
+    var y = d3.scaleLinear()
+        .rangeRound([height, 0]);
+
+    var z = d3.scaleOrdinal()
+        .range(["#e74c3c","#85c1e9","#7d3c98","#a04000"]);
+
+    if (property === "time") {
+        x.domain([0, d3.max(nested_data.map(function (d) {
+            return +d.key;
+        })) + 1]);
+    } else {
+        x.domain(nested_data.map(function (d) {
+            return d.key;
+        }));
+
+    }
+
+    y.domain([0, d3.max(nested_data, function (d) {
+        return d.value.size;
+    })]);
+    z.domain(nested_data.map(function (d) {
+        return d.key;
+    }));
+
+    g.selectAll(".bar")
+        .data(nested_data)
+        .enter()
+        .append("rect")
+        .attr("class", "bar")
+        .attr("x", function (d) {
+            return x(d.key)
+        })
+        .attr("y", function (d) {
+            return y(d.value.size);
+        })
+        .attr("height", function (d) {
+            return height - y(d.value.size);
+        })
+        .attr("width", function (d) {
+            return (x(1)-x(0))*0.9;
+
+        })
+        .style("fill", function (d) {
+            return z(d.key)
+        });
+
+    g.append("g")
+        .attr("class", "axis")
+        .attr("transform", "translate(0," + height + ")")
+        .attr("class", "axes")
+        .call(d3.axisBottom(x));
+
+    g.append("g")
+        .attr("class", "axis")
+        .attr("class", "axes")
+        .call(d3.axisLeft(y).ticks(null, "s"))
+
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function bar_chart_datatime(element, property) {
     $("#" + element).html("");
     var val = d3.select("#" + element).append("text").text(property);
 
 }
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 $(function () {
     console.log("READY");
 
@@ -248,11 +345,12 @@ $(function () {
         bar_chart("bcp", "priority");
         bar_chart("bcs", "status");
         bar_chart("bcw", "who");
+        bar_chart_time("bct","time");
         treemap("status");
 
-        bar_chart_time("time_all",time_all);
-        bar_chart_time("time_joe",time_joe);
-        bar_chart_time("time_current",time_current);
+        bar_chart_datatime("time_all",time_all);
+        bar_chart_datatime("time_joe",time_joe);
+        bar_chart_datatime("time_current",time_current);
 
     });
 
