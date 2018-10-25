@@ -36,6 +36,8 @@ function legend(element, keys, z) {
         });
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function treemap(element) {
 
     $("#treemap_" + element).html("");
@@ -119,6 +121,8 @@ function treemap(element) {
         });
 
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function bar_chart(element, property) {
     $("#" + element).html("");
@@ -209,6 +213,8 @@ function bar_chart(element, property) {
         .call(d3.axisLeft(y).ticks(null, "s"))
 
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function bar_chart_time(element, property) {
     $("#" + element).html("");
@@ -301,6 +307,17 @@ function bar_chart_time(element, property) {
 
 }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function bar_chart_datatime(element, property) {
+    $("#" + element).html("");
+    var val = d3.select("#" + element).append("text").text(property);
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 $(function () {
     console.log("READY");
 
@@ -310,14 +327,30 @@ $(function () {
 
     d3.csv(URL, function (d) {
         data = d;
+        time_all = 0;
+        time_joe = 0;
+        time_current = 0;
         data.forEach(function (d) {
             d.time = +d.time;
+            time_all += d.time;
+            if (d.who == "Joe"){
+                time_joe += d.time;
+            }
+            if (d.status == "DOING"){
+                time_current += d.time;
+            }
         });
+        console.log(time_all);
+
         bar_chart("bcp", "priority");
         bar_chart("bcs", "status");
         bar_chart("bcw", "who");
         bar_chart_time("bct","time");
         treemap("status");
+
+        bar_chart_datatime("time_all",time_all);
+        bar_chart_datatime("time_joe",time_joe);
+        bar_chart_datatime("time_current",time_current);
 
     });
 
