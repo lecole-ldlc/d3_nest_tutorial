@@ -6,6 +6,9 @@
     <meta name="author" content="Antoine Scherrer <antoine.scherrer@lecole-ldlc.com>">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
 </head>
 <body>
 
@@ -60,9 +63,25 @@
             <div id="treemap_who"></div>
         </div>
     </div>
-    <div class="row">
 
+    <div class="row">
+        <div class="row">
+            <div class="col-4">
+                <h2>Temps total de toutes les taches</h2>
+                <div id="time_all"></div>
+            </div>
+            <div class="col-4">
+                <h2>Temps total des taches de Joe</h2>
+                <div id="time_joe"></div>
+            </div>
+            <div class="col-4">
+                <h2>Temps total des taches en cours</h2>
+                <div id="time_current"></div>
+            </div>
+
+        </div>
     </div>
+
 </main>
 <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -73,6 +92,33 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="main.js"></script>
+
+
+<footer class="footer">
+    <div class="footer-right">
+    <a href="https://www.facebook.com/Influenchieurs/" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://twitter.com/Influenchieurs" target="_blank">
+        <i class ="fab fa-twitter"></i>
+    </a>
+    <a href="https://www.instagram.com/influenchieurs/" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </i>
+    </a>
+    </div>
+
+    <div class="footer-left">
+    <p class="footer-links">
+        <a href="http://influenchieurs.fr/">Accueil</a>
+        <a href="http://influenchieurs.fr/">Blog</a>
+        <a href="http://influenchieurs.fr/influenquoi/">Influenquoi?</a>
+        <a href="#">Contact</a>
+    </p>
+    <p>🌸Influenchieurs🌸</p>
+    </div>
+
+</footer>
 
 
 </body>
