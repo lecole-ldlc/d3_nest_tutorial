@@ -38,7 +38,7 @@ function legend(element, keys, z) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function treemap(element) {
+function treemap(element, primary, secondary) {
 
     $("#treemap_" + element).html("");
     $("#legend_" + element).html("");
@@ -56,10 +56,10 @@ function treemap(element) {
 
     var nested_data = d3.nest()
         .key(function (d) {
-            return d.status;
+            return d[primary];
         })
         .key(function (d) {
-            return d.who;
+            return d[secondary];
         })
         .rollup(function (d) {
             return d.length;
@@ -346,7 +346,8 @@ $(function () {
         bar_chart("bcs", "status");
         bar_chart("bcw", "who");
         bar_chart_time("bct","time");
-        treemap("status");
+        treemap("status", "status", "who");
+        treemap("who", "who", "status");
 
         bar_chart_datatime("time_all",time_all);
         bar_chart_datatime("time_joe",time_joe);
