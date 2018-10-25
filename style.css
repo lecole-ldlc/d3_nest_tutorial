@@ -17,3 +17,86 @@ main {
       font-family: "Georgia", Georgia, sans-serif;
       font-size: 18px;
   }
+
+
+
+
+.footer{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ebddff+0,ffe8fb+33,ffe8fb+33,ccf7ff+66,dbfce6+100 */
+background: #ebddff; /* Old browsers */
+background: -moz-linear-gradient(left, #ebddff 0%, #ffe8fb 33%, #ffe8fb 33%, #ccf7ff 66%, #dbfce6 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #ebddff 0%,#ffe8fb 33%,#ffe8fb 33%,#ccf7ff 66%,#dbfce6 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #ebddff 0%,#ffe8fb 33%,#ffe8fb 33%,#ccf7ff 66%,#dbfce6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebddff', endColorstr='#dbfce6',GradientType=1 ); /* IE6-9 */
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+
+	padding: 45px 50px;
+	margin-top: 80px;
+}
+
+.footer.footer .footer-left p{
+	color: rgba(63, 64, 66, 0.29);
+	font-size: 14px;
+	margin: 0;
+}
+
+/* Footer's links */
+
+.footer.footer p.footer-links{
+	font-size:18px;
+	font-weight: bold;
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer.footer p.footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer.footer .footer-right{
+	float: right;
+	margin-top: 6px;
+	max-width: 180px;
+}
+
+.footer.footer .footer-right a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-color: rgba(0, 0, 0, 0.06);
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: rgba(255, 255, 255, 0.75);
+	text-align: center;
+	line-height: 35px;
+
+	margin-left: 3px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+	.footer.footer-left,
+	.footer.footer-right{
+		text-align: center;
+	}
+
+	.footer.footer-right{
+		float: none;
+		margin: 0 auto 20px;
+	}
+
+	.footer.footer-left p.footer-links{
+		line-height: 1.8;
+	}
+}
