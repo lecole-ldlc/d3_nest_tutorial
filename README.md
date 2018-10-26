@@ -21,11 +21,9 @@ Le projet est à rendre pour le *vendredi 26 octobre 9h30*.
  - ~~[6] Changer l'organisation de la page pour que les graphiques soit plus gros (2 barchart par ligne, 1 treemap par ligne)~~
  - ~~[7] Afficher une treemap avec une décomposition par personne (couleur) puis par priorité (Treemap who). Afficher la légende associée.~~
  - ~~[8] Compléter la barre de navigation en mettant des boutons pour accéder aux différentes lignes~~
- - [7] Afficher une treemap avec une décomposition par personne (couleur) puis par priorité (Treemap who). Afficher la légende associée.
- - ~~[8] Compléter la barre de navigation en mettant des boutons pour accéder aux différentes lignes~~
  - ~~[9] Changer avec du CSS le style des axes des graphiques~~
  - ~~[10] Ajouter un (joli ?) footer~~
- - [11] Ajouter des transitions animées
+ - ~~[11] Ajouter des transitions animées~~
 
 ## Taches avancées
  - [A] Implémenter le bouton "Only Joe" (recharge les graphiques avec les taches de Joe uniquement)
