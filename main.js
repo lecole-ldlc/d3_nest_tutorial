@@ -43,6 +43,7 @@ function legend(element, keys, z) {
 //create a TreeMap chart
 function treemap(element, primary, secondary) {     //element is which element of the data we need, primary are the color and secondary the data shown up
 
+
     $("#treemap_" + element).html("");  //select the good div in index.html, and clean it
     $("#legend_" + element).html("");
     var svg = d3.select("#treemap_" + element).append("svg").attr("width", 1000).attr("height", 500);       //set the svg
@@ -62,6 +63,7 @@ function treemap(element, primary, secondary) {     //element is which element o
             return d[primary];
         })
         .key(function (d) {     //second key
+
             return d[secondary];
         })
         .rollup(function (d) {      //rollup group and count the following element
@@ -205,6 +207,7 @@ function bar_chart(element, property) {
             return z(d.key)
         })
     .on("mouseover", function(d){       //animation on mouseover
+
         d3.select(".tooltip")
             .style("display", "block")
 
@@ -383,6 +386,7 @@ $(function () {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //script for the navbutton
+
 $(document).ready(function(){
     // au clic sur un lien
     $('a').on('click', function(evt){
